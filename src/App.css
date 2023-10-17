@@ -1,4 +1,13 @@
-.App {
+/* @use '~@cloudscape-design/design-tokens' as cs;
+
+#top-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1002;
+  font-family: 'Open Sans', 'Helvetica Neue', Roboto, Arial, sans-serif;
+} */
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +44,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
