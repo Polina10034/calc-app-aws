@@ -6,10 +6,10 @@ import TopNavigation from '@cloudscape-design/components/top-navigation';
 import logo from '../download.png';
 import Navigation from '../components/navigation';
 import Breadcrumbs from '../components/breadcrumbs';
-import Children from '../components/uploadfiles3';
+// import Children from '../components/uploadfiles3';
 import './styles.css';
 
-export default function Shell({ children, contentType, breadcrumbs, tools, navigation, notifications }: ShellProps) {
+export default function Shell({ children, contentType, breadcrumbs, tools, navigation, notifications }) {
   return (
 
     <>
@@ -29,11 +29,11 @@ export default function Shell({ children, contentType, breadcrumbs, tools, navig
       <AppLayout
         // contentType={contentType}
         navigation={<Navigation />}
-        breadcrumbs={<Breadcrumbs/>}
+        breadcrumbs={breadcrumbs}
         // notifications={notifications}
         // stickyNotifications={true}
         // tools={tools}
-        content={<Children/>}
+        content={children}
         headerSelector="#top-nav"
         ariaLabels={{
           navigation: 'Navigation drawer',

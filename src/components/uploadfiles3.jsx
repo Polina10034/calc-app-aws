@@ -21,9 +21,9 @@ export default () => {
       console.log(accountId)
       console.log(files);
       // fileService.getHello();
-      // fileService.getPricingRsults('3222222222')
+      // fileService.getPricingRsults('3222222222')999777999 
       fileService.uploadFiles(files, files, accountId).then(res => {
-        console.log(res);
+        // console.log(res);
         if (res === 'ok') {
           setAccountId("");
           setfile([]);
@@ -101,42 +101,3 @@ export default () => {
     </form>
   );
 }
-    // <Board>
-    // <BoardItem 
-    // header={<Header>Upload Files</Header>}
-    // i18nStrings={{
-    //     dragHandleAriaLabel: "Drag handle",
-    //   }}>
-    // <FormField
-    //   label="Form field label"
-    //   description="Description"
-    // >
-    //   <FileUpload
-    //     onChange={({ detail }) => setValue(detail.value)}
-    //     value={value}
-    //     i18nStrings={{
-    //       uploadButtonText: e =>
-    //         e ? "Choose files" : "Choose file",
-    //       dropzoneText: e =>
-    //         e
-    //           ? "Drop files to upload"
-    //           : "Drop file to upload",
-    //       removeFileAriaLabel: e =>
-    //         `Remove file ${e + 1}`,
-    //       limitShowFewer: "Show fewer files",
-    //       limitShowMore: "Show more files",
-    //       errorIconAriaLabel: "Error"
-    //     }}
-    //     showFileLastModified
-    //     showFileSize
-    //     showFileThumbnail
-    //     tokenLimit={3}
-    //     constraintText="Hint text for file requirements"
-    //   />
-    // </FormField>
-    // </BoardItem>
-
-    // </Board>
-   
-//   );
-// }

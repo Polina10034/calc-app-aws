@@ -19,18 +19,15 @@ export const fileService = {
       key: `u_${accountId}`,
       accountId: `account_id=${accountId}`
     };
-    console.log(body)
+    // console.log(body)
     try {
-      const response = await HttpService.post("/gets3url", body)
-      console.log("Fetched presigned S3 URL:", response);
-  
+      const response = await HttpService.post("/gets3url", body)  
       await Promise.all(
         allFiles.map(async (file, i) => {
           const uploadResponse = await fetch(response.presigned_url[i], {
             method: "PUT",
             body: file,
           });
-          console.log("uploadResponse", uploadResponse)
           if (!uploadResponse.ok) {
             console.error(`File ${i} upload failed with status code: ${uploadResponse.status}`);
           }
@@ -45,11 +42,20 @@ export const fileService = {
     }
   }
 
-  function getPricingRsults(account_id) {
-    return HttpService.get(`/getpricingresults?id=${account_id}`).then((res) => {
-      console.log(res);
+  // function getPricingRsults(account_id, selectedOptions) {
+  //   console.log(selectedOptions);
+  //   return HttpService.get(`/getpricingresults?id=${account_id}`).then((res) => {
+  //     return res;
+  //   });
+  // }
+
+  function getPricingRsults(account_id, selectedOptions) {
+    const queryString = selectedOptions.map((option, i) => `region_${i}=${encodeURIComponent(option.value)}`).join('&');
+    const url = `/getpricingresults?id=${account_id}&${queryString}`;
+    return HttpService.get(url).then((res) => {
+        return res;
     });
-  }
+}
   
 
 function getHello() {
