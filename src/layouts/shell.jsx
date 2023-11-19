@@ -16,8 +16,8 @@ export default function Shell({ children, contentType, breadcrumbs, tools, navig
       <div id="top-nav">
         <TopNavigation
           identity={{
-            logo: { src: logo, alt: 'Workload Calculator' },
-            title: 'Workload Calculator',
+            logo: { src: logo, alt: 'Workload Pricing Assessor' },
+            title: 'Workload Pricing Assessor',
             href: '/',
           }}
           i18nStrings={{
