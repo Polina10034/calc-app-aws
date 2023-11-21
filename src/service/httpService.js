@@ -21,7 +21,7 @@ async function connectApi(endpoint, method = "get", data = null) {
   // const user = localStorage.getItem("user");
   try {
     const res = await axios({
-      url: `https://${process.env.REACT_APP_API_DEV}${endpoint}`,
+      url: `https://${process.env.REACT_APP_API_TESTQ}${endpoint}`,
       method,
       headers: {
         "Content-Type": "application/json",

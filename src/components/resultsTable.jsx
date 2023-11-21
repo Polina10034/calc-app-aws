@@ -1,5 +1,6 @@
 import * as React from "react";
 import { useState } from "react";
+import Box from "@cloudscape-design/components/box";
 import FileUpload from "@cloudscape-design/components/file-upload";
 import FormField from "@cloudscape-design/components/form-field";
 import Header from "@cloudscape-design/components/header";
@@ -12,6 +13,7 @@ import { fileService } from "../service/fileService";
 import Table from "./tableComponents/table"
 import Multiselect from "@cloudscape-design/components/multiselect";
 import AnalysisOverview from "./chartComponents/overview";
+import QSDashboards from "./chartComponents/QSDashboards";
 
 export default () => {
   const [accountData, setAccountData] = useState([]);
@@ -169,8 +171,8 @@ export default () => {
       <AnalysisOverview data={metrics} loading={isLoading} setLoading={setIsLoading} header={"Analysis Overview"}/>
       <Table data={accountData} availble={availble} loading={isLoading} setLoading={setIsLoading} selectedOptions={selectedOptions} setSelectedInstance={setSelected} />
       <AnalysisOverview data={selectedInstanceMetrics} loading={isLoading} setLoading={setIsLoading} header={"Analysis Insights"}/>
+      <QSDashboards header={"QuickSight Dashboards"}/>
       </>}
-      {/* <PieChart/> */}
       </SpaceBetween>
   );
 }
